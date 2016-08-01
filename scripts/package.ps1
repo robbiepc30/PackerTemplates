@@ -15,8 +15,8 @@ if (Test-Command -cmdname 'Uninstall-WindowsFeature') {
     Uninstall-WindowsFeature -Remove
 }
 
-
-Install-WindowsUpdate -AcceptEula
+# uncomment to update windows
+#Install-WindowsUpdate -AcceptEula
 
 Write-BoxstarterMessage "Removing page file"
 $pageFileMemoryKey = "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management"
