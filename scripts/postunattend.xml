@@ -42,6 +42,12 @@
                     </LocalAccount>
                 </LocalAccounts>
             </UserAccounts>
+            <FirstLogonCommands>
+ -            <SynchronousCommand wcm:action="add">
+ -               <CommandLine>netsh advfirewall firewall set rule name="WinRM-HTTP" new action=allow</CommandLine>
+ -               <Order>1</Order>
+ -            </SynchronousCommand>
+ -          </FirstLogonCommands>
         </component>
     </settings>
     <settings pass="specialize">
