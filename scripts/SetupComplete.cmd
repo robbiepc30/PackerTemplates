@@ -1,8 +1,12 @@
-REG ADD HKLM\Software\Microsoft\Windows\CurrentVersion\WSMAN\Service /v allow_unencrypted /t REG_DWORD /d 1 /f
-REG ADD HKLM\Software\Microsoft\Windows\CurrentVersion\WSMAN\Service /v auth_basic /t REG_DWORD /d 1 /f
-REG ADD HKLM\Software\Microsoft\Windows\CurrentVersion\WSMAN\Client /v auth_basic /t REG_DWORD /d 1 /f
 
-netsh advfirewall firewall set rule group="File and Printer Sharing" new enable=yes
-wmic useraccount where "name='vagrant'" set PasswordExpires=FALSE
+REM This batch file should be copied via the File Provisioner in Packer template to
+REM C:/Windows/Setup/scripts/SetupComplete.cmd
+REM this will be batch file will automatically be executed after windows setup completes
+REM ref https://technet.microsoft.com/en-us/library/cc766314(v=ws.10).aspx
 
-cmd.exe /c C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -command . c:\windows\setup\scripts\nano_cleanup.ps1 > c:\windows\setup\scripts\cleanup.txt
+REM Change WinRM service start type back to auto
+cmd.exe /c sc config winrm start=auto
+
+REM Start WinRM so Vagrant can now connect to VM
+cmd.exe /c net start winrm
+      

@@ -21,8 +21,6 @@
       "shutdown_timeout": "15m",
       "floppy_files": [
         "answer_files/2012_r2{{user `core`}}/Autounattend.xml",
-        "scripts/oracle.cer",
-        "scripts/postunattend.xml",
         "scripts/boxstarter.ps1",
         "scripts/PackerShutdown.bat",
         "scripts/package.ps1",
@@ -34,7 +32,21 @@
   "provisioners": [
     {
       "type": "powershell",
-      "script": "scripts/provision.ps1"
+      "script": "./scripts/Install-ParallelsGuestTools.ps1"
+    },
+    {
+      "type": "powershell",
+      "script": "./scripts/cleanup.ps1"
+    },
+    {
+      "type": "file",
+      "source": "./scripts/SetupComplete.cmd",
+      "destination": "C:/Windows/Setup/scripts/SetupComplete.cmd"
+    },
+    {
+      "type": "file",
+      "source": "./answer_files/2012_r2/postunattend.xml",
+      "destination": "C:/Windows/Panther/Unattend/unattend.xml"
     }
   ],
   "post-processors": [
@@ -46,7 +58,7 @@
     }]
   ],
   "variables": {
-    "core": "",
+    "core<TimeZone>Alaskan Standard Time</TimeZone>": "",
     "guest_additions_mode": "attach",
     "headless": "false",
     "iso_checksum": "5b5e08c490ad16b59b1d9fab0def883a",
