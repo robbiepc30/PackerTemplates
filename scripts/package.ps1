@@ -21,22 +21,17 @@ netsh advfirewall firewall set rule group="File and Printer Sharing" new enable=
 
 Update-ExecutionPolicy -Policy Unrestricted
 
-
-#if (Test-Command -cmdname 'Uninstall-WindowsFeature') {
-#    Write-BoxstarterMessage "Removing unused features..."
-#    Remove-WindowsFeature -Name 'Powershell-ISE'
-#    Get-WindowsFeature | 
-#    ? { $_.InstallState -eq 'Available' } | 
-#    Uninstall-WindowsFeature -Remove
-#}
-
+# Remove unused features before installing windows updates
+if (Test-Command -cmdname 'Uninstall-WindowsFeature') {
+    Write-BoxstarterMessage "Removing unused features..."
+    Remove-WindowsFeature -Name 'Powershell-ISE'
+    Get-WindowsFeature | 
+    Where-Object { $_.InstallState -eq 'Available' } | 
+    Uninstall-WindowsFeature -Remove
+}
 
 #Write-BoxstarterMessage "Installing Windows Updates"
 #Install-WindowsUpdate -AcceptEula
-
-Write-BoxstarterMessage "Removing page file"
-$pageFileMemoryKey = "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management"
-Set-ItemProperty -Path $pageFileMemoryKey -Name PagingFiles -Value ""
 
 if(Test-PendingReboot){ Invoke-Reboot }
 
@@ -45,8 +40,8 @@ netsh advfirewall firewall add rule name="WinRM-HTTP" dir=in localport=5985 prot
 
 $enableArgs=@{Force=$true}
 try {
- $command=Get-Command Enable-PSRemoting
-  if($command.Parameters.Keys -contains "skipnetworkprofilecheck"){
+ $command = Get-Command Enable-PSRemoting
+  if ($command.Parameters.Keys -contains "skipnetworkprofilecheck") {
       $enableArgs.skipnetworkprofilecheck=$true
   }
 }

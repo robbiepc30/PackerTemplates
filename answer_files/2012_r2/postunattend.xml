@@ -24,6 +24,14 @@
                 <HideWirelessSetupInOOBE>true</HideWirelessSetupInOOBE>
             </OOBE>
             <TimeZone>Alaskan Standard Time</TimeZone>
+            <AutoLogon>
+                <Password>
+                    <Value>dgBhAGcAcgBhAG4AdABQAGEAcwBzAHcAbwByAGQA</Value>
+                    <PlainText>false</PlainText>
+                </Password>
+                <LogonCount>1</LogonCount>
+                <Username>vagrant</Username>
+            </AutoLogon>
             <UserAccounts>
                 <AdministratorPassword>
                     <Value>vagrant</Value>
