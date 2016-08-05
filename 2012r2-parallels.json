@@ -17,7 +17,7 @@
       "winrm_username": "vagrant",
       "winrm_password": "vagrant",
       "winrm_timeout": "12h",
-      "shutdown_command": "a:/PackerShutdown.bat",
+      "shutdown_command": "a:/PackerShutdown.cmd",
       "shutdown_timeout": "15m",
       "floppy_files": [
         "answer_files/2012_r2{{user `core`}}/Autounattend.xml",
