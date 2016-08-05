@@ -31,17 +31,18 @@
                 </Password>
                 <LogonCount>1</LogonCount>
                 <Username>vagrant</Username>
+                <Enabled>true</Enabled>
             </AutoLogon>
             <UserAccounts>
                 <AdministratorPassword>
-                    <Value>vagrant</Value>
-                    <PlainText>true</PlainText>
+                    <Value>dgBhAGcAcgBhAG4AdABBAGQAbQBpAG4AaQBzAHQAcgBhAHQAbwByAFAAYQBzAHMAdwBvAHIAZAA=</Value>
+                    <PlainText>false</PlainText>
                 </AdministratorPassword>
                 <LocalAccounts>
                     <LocalAccount wcm:action="add">
                         <Password>
-                            <Value>vagrant</Value>
-                            <PlainText>true</PlainText>
+                            <Value>dgBhAGcAcgBhAG4AdABQAGEAcwBzAHcAbwByAGQA</Value>
+                            <PlainText>false</PlainText>
                         </Password>
                         <Group>administrators</Group>
                         <DisplayName>Vagrant</DisplayName>
@@ -52,6 +53,5 @@
             </UserAccounts>
         </component>
     </settings>
-    <settings pass="specialize">
-    </settings>
+    <cpi:offlineImage cpi:source="wim:c:/2012r2wim/install.wim#Windows Server 2012 R2 SERVERSTANDARD" xmlns:cpi="urn:schemas-microsoft-com:cpi" />
 </unattend>

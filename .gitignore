@@ -5,3 +5,4 @@ output-parallels-iso
 hyper-v-output
 *.iso
 *.box
+*.DS_Store
