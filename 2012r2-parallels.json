@@ -23,7 +23,7 @@
         "answer_files/2012_r2{{user `core`}}/Autounattend.xml",
         "scripts/boxstarter.ps1",
         "scripts/package.ps1",
-        "scripts/PackerShutdown.bat"
+        "scripts/PackerShutdown.cmd"
       ]      
     }
   ],
