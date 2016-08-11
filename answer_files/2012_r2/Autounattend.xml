@@ -77,6 +77,7 @@
                 </Password>
                 <Username>vagrant</Username>
                 <Enabled>true</Enabled>
+                <LogonCount>1</LogonCount>
             </AutoLogon>
             <FirstLogonCommands>
                 <SynchronousCommand wcm:action="add">
