@@ -1,3 +1,6 @@
+$ErrorActionPreference = "Stop"
+
 choco uninstall boxstarter --allversions
 
-Remove-Item -Path "$env:USERPROFILE\Desktop\Boxstarter Shell.lnk" -Force
+$path = $env:USERPROFILE\Desktop\Boxstarter Shell.lnk
+if (Test-Path $path) { Remove-Item -Path $path -Force }

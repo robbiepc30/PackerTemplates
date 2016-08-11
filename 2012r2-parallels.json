@@ -42,6 +42,10 @@
     },
     {
       "type": "powershell",
+      "script": "./scripts/Remove-ParallelsDesktopShortcut.ps1"
+    },
+    {
+      "type": "powershell",
       "script": "./scripts/cleanup.ps1"
     },
     {
