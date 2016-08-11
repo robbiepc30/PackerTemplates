@@ -1,3 +1,5 @@
+$ErrorActionPreference = "Stop"
+
 Remove-Item -Recurse -Force "$env:ChocolateyInstall"
 [System.Text.RegularExpressions.Regex]::Replace( ` 
 [Microsoft.Win32.Registry]::CurrentUser.OpenSubKey('Environment').GetValue('PATH', '',  `
