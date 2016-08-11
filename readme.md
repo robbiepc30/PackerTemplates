@@ -1,6 +1,6 @@
 # Packer Templates
 
-*** This was originally a forked repo from mwrock/packer-templates. Credit goes to Matt Wrock. ***
+**This was originally a forked repo from mwrock/packer-templates. Credit goes to Matt Wrock.**
 I started to make a lot of changes and decided it would be better to put this into its own repo instead of a fork.
 
 A Packer template that simplifies the creation of minimally-sized Windows Vagrant boxes.
@@ -11,7 +11,6 @@ A Packer template that simplifies the creation of minimally-sized Windows Vagran
 You need the following to run the template:
 
 1. [Packer](https://packer.io/docs/installation.html) installed with a minimum version of 0.8.6.
-2. [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
 ## Invoking the template
 Invoke `packer` to run the template like this:
