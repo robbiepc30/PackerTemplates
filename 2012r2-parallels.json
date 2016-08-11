@@ -34,6 +34,14 @@
     },
     {
       "type": "powershell",
+      "script": "./scripts/Remove-Boxstarter.ps1"
+    },
+    {
+      "type": "powershell",
+      "script": "./scripts/Remove-Chocolatey.ps1"
+    },
+    {
+      "type": "powershell",
       "script": "./scripts/cleanup.ps1"
     },
     {
