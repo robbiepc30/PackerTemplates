@@ -34,6 +34,10 @@
     },
     {
       "type": "powershell",
+      "script": "./scripts/Install-WMF5.ps1"
+    },
+    {
+      "type": "powershell",
       "script": "./scripts/Remove-Boxstarter.ps1"
     },
     {
