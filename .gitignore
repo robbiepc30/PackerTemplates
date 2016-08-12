@@ -1,8 +1,5 @@
 iso
-output-virtualbox-iso
-output-qemu
-output-parallels-iso
-hyper-v-output
+output-*
 *.iso
 *.box
 *.DS_Store
