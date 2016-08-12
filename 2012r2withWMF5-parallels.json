@@ -2,6 +2,8 @@
   "builders": [
     {
       "type": "parallels-iso",
+      "name": "Windows_2012R2_WMF5",
+      "vm_name": "Windows_2012R2_WMF5",
       "prlctl": [
         [ "set", "{{.Name}}", "--memsize", "1536" ],
         [ "set", "{{.Name}}", "--cpus", "1" ],
@@ -23,7 +25,8 @@
         "answer_files/2012_r2{{user `core`}}/Autounattend.xml",
         "scripts/boxstarter.ps1",
         "scripts/package.ps1",
-        "scripts/PackerShutdown.cmd"
+        "scripts/PackerShutdown.cmd",
+        "scripts/Install-WMF5.ps1"
       ]      
     }
   ],
@@ -34,7 +37,7 @@
     },
     {
       "type": "powershell",
-      "script": "./scripts/Install-WMF5.ps1"
+      "script": "./scripts/Start-InstallWMF5.ps1"
     },
     {
       "type": "powershell",
@@ -47,10 +50,6 @@
     {
       "type": "powershell",
       "script": "./scripts/Remove-ParallelsDesktopShortcut.ps1"
-    },
-     {
-      "type": "powershell",
-      "script": "./scripts/cleanup.ps1"
     },
     {
       "type": "file",
