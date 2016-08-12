@@ -45,6 +45,10 @@
       "script": "./scripts/Remove-ParallelsDesktopShortcut.ps1"
     },
     {
+      "type": "powershell",
+      "script": "./scripts/cleanup.ps1"
+    },
+    {
       "type": "file",
       "source": "./scripts/SetupComplete.cmd",
       "destination": "C:/Windows/Setup/scripts/SetupComplete.cmd"
@@ -54,14 +58,6 @@
       "source": "./answer_files/2012_r2/postunattend.xml",
       "destination": "C:/Windows/Panther/Unattend/unattend.xml"
     }
-  ],
-  "post-processors": [
-    [{
-      "type": "vagrant",
-      "keep_input_artifact": false,
-      "output": "windows2012r2min-{{.Provider}}.box",
-      "vagrantfile_template": "vagrantfile-windows.template"
-    }]
   ],
   "variables": {
     "core": "",
