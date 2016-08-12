@@ -3,8 +3,7 @@
 **This was originally a forked repo from mwrock/packer-templates. Credit goes to Matt Wrock.**
 I started to make a lot of changes and decided it would be better to put this into its own repo instead of a fork.
 
-A Packer template that simplifies the creation of minimally-sized Windows Vagrant boxes.
-
+These packer templates will produce a vanilla windows vagrant box that are up to date with patches.  During the build process it will install Chocolatey and Boxstarter as part of the initial build provisioning process, however these will be removed at the end of the packer provision process to keep a vanilla windows image.
 
 ## Prerequisites
 
