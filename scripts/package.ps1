@@ -22,16 +22,16 @@ netsh advfirewall firewall set rule group="File and Printer Sharing" new enable=
 Update-ExecutionPolicy -Policy Unrestricted
 
 # Remove unused features before installing windows updates
-if (Test-Command -cmdname 'Uninstall-WindowsFeature') {
-    Write-BoxstarterMessage "Removing unused features..."
-    Remove-WindowsFeature -Name 'Powershell-ISE'
-    Get-WindowsFeature | 
-    Where-Object { $_.InstallState -eq 'Available' } | 
-    Uninstall-WindowsFeature -Remove
-}
-
-Write-BoxstarterMessage "Installing Windows Updates"
-Install-WindowsUpdate -AcceptEula
+#if (Test-Command -cmdname 'Uninstall-WindowsFeature') {
+#    Write-BoxstarterMessage "Removing unused features..."
+#    Remove-WindowsFeature -Name 'Powershell-ISE'
+#    Get-WindowsFeature | 
+#    Where-Object { $_.InstallState -eq 'Available' } | 
+#    Uninstall-WindowsFeature -Remove
+#}
+#
+#Write-BoxstarterMessage "Installing Windows Updates"
+#Install-WindowsUpdate -AcceptEula
 
 if(Test-PendingReboot){ Invoke-Reboot }
 
