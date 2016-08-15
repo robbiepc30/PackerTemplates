@@ -57,14 +57,6 @@
       "destination": "C:/Windows/Panther/Unattend/unattend.xml"
     }
   ],
-  "post-processors": [
-    [{
-      "type": "vagrant",
-      "keep_input_artifact": false,
-      "output": "windows2012r2min-{{.Provider}}.box",
-      "vagrantfile_template": "vagrantfile-windows.template"
-    }]
-  ],
   "variables": {
     "core": "",
     "guest_additions_mode": "attach",
