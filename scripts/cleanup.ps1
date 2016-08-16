@@ -14,9 +14,9 @@ function Test-Command($cmdname)
 
 Write-Host "Removing page file"
 $pageFileMemoryKey = "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management"
-Set-ItemProperty -Path $pageFileMemoryKey -Name PagingFiles -Value ""#
+Set-ItemProperty -Path $pageFileMemoryKey -Name PagingFiles -Value ""
 Write-Host "Cleaning SxS..."
-Dism.exe /online /Cleanup-Image /StartComponentCleanup /ResetBase#
+Dism.exe /online /Cleanup-Image /StartComponentCleanup /ResetBase
 @(
     "$env:localappdata\Nuget",
     "$env:localappdata\temp\*",
