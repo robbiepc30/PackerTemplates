@@ -32,19 +32,11 @@
   "provisioners": [
     {
       "type": "powershell",
-      "script": "./scripts/Install-ParallelsGuestTools.ps1"
-    },
-    {
-      "type": "powershell",
-      "script": "./scripts/Remove-Boxstarter.ps1"
-    },
-    {
-      "type": "powershell",
-      "script": "./scripts/Remove-Chocolatey.ps1"
-    },
-    {
-      "type": "powershell",
-      "script": "./scripts/Remove-ParallelsDesktopShortcut.ps1"
+      "scripts": [
+        "./scripts/Install-ParallelsGuestTools.ps1",
+        "./scripts/Remove-Boxstarter.ps1",
+        "./scripts/Remove-ParallelsDesktopShortcut.ps1"
+      ]
     },
     {
       "type": "file",
