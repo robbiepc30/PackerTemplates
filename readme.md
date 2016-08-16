@@ -3,7 +3,7 @@
 **This was originally a forked repo from mwrock/packer-templates. Credit goes to Matt Wrock.**
 I started to make a lot of changes and decided it would be better to put this into its own repo instead of a fork.
 
-These packer templates will produce a vanilla windows vagrant box that are up to date with patches.  During the build process it will install Chocolatey and Boxstarter as part of the initial build provisioning process, however these will be removed at the end of the packer provision process to keep a vanilla windows image.
+These packer templates will produce a windows vagrant box that are up to date with patches.  During the build process it will install Chocolatey and Boxstarter as part of the initial build provisioning process, however these will be removed at the end of the packer provision process to keep a vanilla windows image.  I will try to keep these images as close to vanilla windows as possible.  There will be a few exceptions such as updating the version of PowerShell by installing the latest Windows Management Framework.
 
 ## Prerequisites
 
