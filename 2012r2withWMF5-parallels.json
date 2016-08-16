@@ -35,7 +35,8 @@
       "scripts": [
         "./scripts/Install-ParallelsGuestTools.ps1",
         "./scripts/Remove-Boxstarter.ps1",
-        "./scripts/Remove-ParallelsDesktopShortcut.ps1"
+        "./scripts/Remove-ParallelsDesktopShortcut.ps1",
+        "./scripts/Remove-Chocolatey.ps1"
       ]
     },
     {
