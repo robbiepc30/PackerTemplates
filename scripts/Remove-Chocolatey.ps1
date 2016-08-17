@@ -3,6 +3,10 @@ $ErrorActionPreference = "Stop"
 Write-Host "Removing Chocolatey"
 
 Remove-Item -Recurse -Force "$env:ChocolateyInstall"
+
+# DO NOT UNCOMMNET CODE BELOW UNLESS YOU HAVE A FIX!!!
+# something is wrong with the code below which is suppose to remove the chocolatey locations from the PATH environtment variable that causes issues with WinRM connection with packer
+
 #[System.Text.RegularExpressions.Regex]::Replace( ` 
 #[Microsoft.Win32.Registry]::CurrentUser.OpenSubKey('Environment').GetValue('PATH', '',  `
 #[Microsoft.Win32.RegistryValueOptions]::DoNotExpandEnvironmentNames).ToString(),  `
