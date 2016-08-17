@@ -33,10 +33,7 @@ Update-ExecutionPolicy -Policy Unrestricted
 #Write-BoxstarterMessage "Installing Windows Updates"
 #Install-WindowsUpdate -AcceptEula
 
-if(Test-PendingReboot){ Invoke-Reboot }
-
 Write-BoxstarterMessage "Setting up WinRM"
-netsh advfirewall firewall add rule name="WinRM-HTTP" dir=in localport=5985 protocol=TCP action=allow
 
 $enableArgs=@{Force=$true}
 try {
@@ -54,4 +51,11 @@ Enable-WSManCredSSP -Force -Role Server
 winrm set winrm/config/client/auth '@{Basic="true"}'
 winrm set winrm/config/service/auth '@{Basic="true"}'
 winrm set winrm/config/service '@{AllowUnencrypted="true"}'
+
+# Testing something by moving this:  if(Test-PendingReboot){ Invoke-Reboot }  to the end of the script
+# It seems that if WMF5 is installed and then rebooted (now PS is running v5) and then the WinRM stuff is enabled, vagrant errors out with WinRM::WinRMAuthorizationError
+# however if these settings are applied first then WMF5 is intalled it works fine... I have no idea why... Need to investgate further...
+if(Test-PendingReboot){ Invoke-Reboot }
+
+netsh advfirewall firewall add rule name="WinRM-HTTP" dir=in localport=5985 protocol=TCP action=allow
 Write-BoxstarterMessage "winrm setup complete"
