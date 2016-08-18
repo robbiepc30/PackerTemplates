@@ -11,4 +11,4 @@ $startMenuShortcut = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Boxstar
 if (Test-Path $startMenuShortcut) { Remove-Item -Path $startMenuShortcut -Recurse -Force }
 
 $boxstaterAppData = "$env:APPDATA\Boxstarter"
-if (Test-Path $startMenuShortcut) { Remove-Item -Path $boxstaterAppData -Recurse -Force }
+if (Test-Path $boxstaterAppData ) { Remove-Item -Path $boxstaterAppData -Recurse -Force }
