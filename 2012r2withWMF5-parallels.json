@@ -18,9 +18,9 @@
       "communicator": "winrm",
       "winrm_username": "vagrant",
       "winrm_password": "vagrant",
-      "winrm_timeout": "12h",
+      "winrm_timeout": "36h",
       "shutdown_command": "a:/PackerShutdown.cmd",
-      "shutdown_timeout": "15m",
+      "shutdown_timeout": "30m",
       "floppy_files": [
         "answer_files/2012_r2{{user `core`}}/Autounattend.xml",
         "scripts/boxstarter.ps1",
@@ -36,7 +36,8 @@
         "./scripts/Install-ParallelsGuestTools.ps1",
         "./scripts/Remove-ParallelsDesktopShortcut.ps1",
         "./scripts/Remove-Boxstarter.ps1",
-        "./scripts/Remove-Chocolatey.ps1"
+        "./scripts/Remove-Chocolatey.ps1",
+        "./scripts/cleanup.ps1"
       ]
     },
     {
